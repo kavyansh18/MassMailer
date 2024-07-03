@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from 'axios'; 
+import logo from '../src/assets/logo.png'
 
 export default function EmailForm() {
   const [recipients, setRecipients] = useState([]);
@@ -47,23 +48,30 @@ export default function EmailForm() {
       },
     })
     .then(() => {
-      setSubmitStatus('Sent'); // Update button text to "Sent"
+      setSubmitStatus('Sent'); 
       alert('Sent successfully!');
       console.log('success');
-      setTimeout(() => setSubmitStatus('Send Email'), 2000); // Reset button text after 2 seconds
+      setTimeout(() => setSubmitStatus('Send Email'), 2000); 
     })
     .catch((error) => {
-      setSubmitStatus('Send Email'); // Reset button text on failure
+      setSubmitStatus('Send Email'); 
+      alert('Failed to send')
       console.log('failure', error);
     });
   };
 
   return (
-    <div className='flex justify-center align-items mt-6 gap-12'>
-      <div>
-        <h1>Welcome to MassMailer</h1>
+    <div className='flex justify-center align-items mt-6'>
+      <div className='w-[360px] mt-6 flex flex-col justify-center align-items mb-[140px]'>
+        <div className='flex justify-center align-items ml-14'>
+          <img className='w-[160px]' src={logo} alt="" />
+        </div>
+        <h1 className='text-white mb-1 text-right direction-rtl text-[30px]'>Welcome to MassMailer</h1>
+        <h1 className='text-white mb-1 text-right direction-rtl   text-blue-400'>Reach Your Audience with One Click</h1>
+        <p className='text-white text-right direction-rtl text-[12px]'>The ultimate solution for all your email marketing needs. Our massmailer allows you to send personalized emails to thousands of recipients in just a few clicks, making it the perfect tool for businesses, marketers, and information spreaders.</p>
       </div>
-      <div>
+
+      <div className='ml-6'>
         <form onSubmit={handleSubmit} className="w-[550px] h-[550px] mx-auto p-4 pt-6 pb-8 mb-4 rounded shadow-md">
           <label className="block mb-2 text-m font-bold text-white">Recipients:</label>
           <p
@@ -112,7 +120,7 @@ export default function EmailForm() {
             onClick={handleAddRecipient}
             className="bg-gray-500 hover:bg-black text-white py-1 px-2 rounded text-[14px] my-2"
           >
-            Add More
+            Add
           </button>
           <br className="my-4" />
           <label className="block mb-2 text-m font-bold text-white" htmlFor="subject">Subject:</label>
@@ -178,9 +186,9 @@ export default function EmailForm() {
           <button
             type="submit"
             className="mt-4 text-[16px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-[200px]"
-            disabled={submitStatus === 'Sending...'} // Disable button when sending
+            disabled={submitStatus === 'Sending...'} 
           >
-            {submitStatus} {/* Display the submit status */}
+            {submitStatus}
           </button>
         </form>
       </div>
