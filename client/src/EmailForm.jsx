@@ -78,7 +78,7 @@ export default function EmailForm() {
     });
 
     axios
-      .post("http://localhost:5001/", formData, {
+      .post("http://localhost:3000/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

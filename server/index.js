@@ -5,7 +5,7 @@ const multer = require("multer");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 const app = express();
-const port = 5001;
+const port = 3000;
 
 // Configure multer for file uploads
 const upload = multer();
