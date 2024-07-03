@@ -108,7 +108,7 @@ export default function EmailForm() {
               id="userId"
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
-              className="w-[290px]  px-3 py-1 text-sm bg-black border border-blue-400 rounded-lg "
+              className="w-[290px] text-white px-3 py-1 text-sm bg-black border border-blue-400 rounded-lg "
               placeholder="Enter your Gmail Id"
             />
           </div>
@@ -119,7 +119,7 @@ export default function EmailForm() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-[290px] px-3 py-[5px] text-sm bg-black border border-blue-400 rounded-lg"
+                className="w-[290px] text-white px-3 py-[5px] text-sm bg-black border border-blue-400 rounded-lg"
                 placeholder="Enter your Gmail App Password"
               />
               <button
