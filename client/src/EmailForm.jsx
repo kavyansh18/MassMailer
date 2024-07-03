@@ -4,6 +4,7 @@ import * as XLSX from "xlsx";
 import logo from "../src/assets/logo.png";
 import eyeOpenIcon from "../src/assets/eye-open.svg";
 import eyeClosedIcon from "../src/assets/eye-closed.svg";
+import "./font.css";
 
 export default function EmailForm() {
   const [recipients, setRecipients] = useState([]);
@@ -136,10 +137,13 @@ export default function EmailForm() {
           </div>
           <div>
             <button
+              className="relative inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-5 rounded text-[14px]"
             >
-              {loginButtonText}
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-5 text-sm font-medium text-white backdrop-blur-3xl">
+                {loginButtonText}
+              </span>
             </button>
           </div>
         </form>
@@ -150,13 +154,13 @@ export default function EmailForm() {
           <div className="flex justify-center align-items lg:ml-14">
             <img className="w-[160px]" src={logo} alt="" />
           </div>
-          <h1 className="text-white mb-1 lg:text-right lg:direction-rtl text-[30px] text-center">
+          <h1 className=" mb-1 lg:text-right lg:direction-rtl text-[36px] text-center bg-gradient-to-r from-slate-300 to-slate-500 text-transparent bg-clip-text">
             Welcome to MassMailer
           </h1>
-          <h1 className="text-white mb-1 lg:text-right lg:direction-rtl text-blue-400 text-center">
+          <h1 className="text-blue-400 mb-1 lg:text-right lg:direction-rtl text-blue-400 text-center bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
             Reach Your Audience with One Click
           </h1>
-          <p className="text-white lg:text-right lg:direction-rtl text-[12px] text-center">
+          <p className="text-white lg:text-right lg:direction-rtl text-[12px] text-center bg-gradient-to-r from-slate-300 to-slate-500 text-transparent bg-clip-text">
             The ultimate solution for all your email marketing needs. Our
             massmailer allows you to send personalized emails to thousands of
             recipients in just a few clicks, making it the perfect tool for
@@ -165,9 +169,9 @@ export default function EmailForm() {
           <a
             href="https://www.youtube.com/watch?v=27NianZC7Wk"
             target="_blank"
-            className="text-white lg:text-right lg:direction-rtl text-[12px] text-center mt-1 hover:text-blue-400"
+            className=" lg:text-right lg:direction-rtl text-[12px] text-center mt-1 hover:text-blue-400 bg-gradient-to-r from-blue-200 to-cyan-200 text-transparent bg-clip-text"
           >
-            <span className="text-red-500 text-lg">*</span>How to generate
+            <span className="text-red-500 text-lg ">*</span>How to generate
             Gmail App Password?
           </a>
         </div>
@@ -373,8 +377,8 @@ export default function EmailForm() {
             />
             <br className="my-4" />
             <button
+              className="inline-flex h-10 mt-3 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 lg:ml-[200px] ml-[120px]"
               type="submit"
-              className="mt-4 text-[16px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded lg:ml-[200px] ml-[120px]"
             >
               {sendButtonText}
             </button>
