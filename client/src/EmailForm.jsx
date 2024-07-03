@@ -108,7 +108,7 @@ export default function EmailForm() {
               id="userId"
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
-              className="w-[290px]  px-3 py-1 text-sm bg-gray-500 rounded"
+              className="w-[290px]  px-3 py-1 text-sm bg-black border border-blue-400 rounded-lg "
               placeholder="Enter your Gmail Id"
             />
           </div>
@@ -119,7 +119,7 @@ export default function EmailForm() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-[290px] px-3 py-1 text-sm bg-gray-500 rounded"
+                className="w-[290px] px-3 py-[5px] text-sm bg-black border border-blue-400 rounded-lg"
                 placeholder="Enter your Gmail App Password"
               />
               <button
@@ -181,13 +181,13 @@ export default function EmailForm() {
             onSubmit={handleSubmit}
             className="lg:w-[550px] w-[390px] h-[550px] mx-auto p-4 pt-6 pb-8 mb-4 rounded shadow-md"
           >
-            <div className="lg:flex lg:justify-center gap-4 ">
+            <div className="lg:flex lg:justify-center gap-8 ">
               <div>
-                <label className="block mb-2 text-m font-bold text-white">
+                <label className="block mb-2 text-m font-bold block mb-2 text-m font-bold bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text">
                   Recipients:
                 </label>
                 <p
-                  className="text-sm text-red-600 cursor-pointer"
+                  className="text-sm bg-gradient-to-tl from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text cursor-pointer"
                   onClick={() => setShowRecipientsPopup(true)}
                 >
                   {recipients.length} emails added
@@ -230,25 +230,25 @@ export default function EmailForm() {
                   value={newRecipient}
                   onChange={(e) => setNewRecipient(e.target.value)}
                   placeholder="Enter email address"
-                  className="w-full px-3 py-2 text-sm text-white bg-gray-500 rounded"
+                  className="w-full px-3 py-2 text-sm text-white bg-black border border-gray-500 rounded-lg"
                 />
                 <button
+                  className="inline-flex h-7 mt-1 mb-2 animate-shimmer items-center justify-center rounded-md border border-blue-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-4 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 "
                   type="button"
                   onClick={handleAddRecipient}
-                  className="bg-gray-500 hover:bg-black text-white py-1 px-2 rounded text-[14px] my-2"
                 >
                   Add
                 </button>
               </div>
               <div className="flex flex-col justify-start">
                 <label
-                  className="block mb-2 text-m font-bold text-white"
+                  className="block mb-2 text-m font-bold ml-3 block mb-2 text-m font-bold bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text"
                   htmlFor="excel"
                 >
                   Upload Excel File:
                 </label>
                 <p
-                  className="text-sm text-red-600 cursor-pointer"
+                  className="text-sm bg-gradient-to-tl from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text cursor-pointer ml-3"
                   onClick={() => setShowRecipientsPopupFile(true)}
                 >
                   {recipients.length} emails added
@@ -291,13 +291,13 @@ export default function EmailForm() {
                   id="excel"
                   accept=".xlsx, .xls"
                   onChange={handleExcelChange}
-                  className="w-full px-3 py-2 text-sm text-white bg-gray-500 rounded h-[37px]"
+                  className="w-full px-3 py-2 text-sm text-white bg-black rounded-lg h-[37px]"
                 />
                 <br className="my-4" />
               </div>
             </div>
             <label
-              className="block mb-2 text-m font-bold text-white"
+              className="block mb-2 text-m font-bold block mb-2 text-m font-bold bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text"
               htmlFor="subject"
             >
               Subject:
@@ -307,11 +307,11 @@ export default function EmailForm() {
               id="subject"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
-              className="w-full px-3 py-2 text-sm text-white bg-gray-500 rounded"
+              className="w-full px-3 py-2 text-sm text-white bg-black border border-gray-500 rounded-lg"
             />
             <br className="my-4" />
             <label
-              className="block my-2 text-m font-bold text-white"
+              className="block my-2 text-m font-bold block mb-2 text-m font-bold bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text"
               htmlFor="body"
             >
               Body:
@@ -320,17 +320,17 @@ export default function EmailForm() {
               id="body"
               value={body}
               onChange={(e) => setBody(e.target.value)}
-              className="w-full px-3 py-2 text-sm text-white bg-gray-500 rounded h-24 resize-y overflow-y-auto"
+              className="w-full px-3 py-2 text-sm text-white bg-black border border-gray-500 rounded-lg h-24 resize-y overflow-y-auto"
             />
             <br className="my-4" />
             <label
-              className="block mb-2 text-m font-bold text-white"
+              className="block mb-2 text-m font-bold block mb-2 text-m font-bold bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text"
               htmlFor="attachments"
             >
               Attachments:
             </label>
             <p
-              className="text-sm text-red-600 cursor-pointer"
+              className="text-sm bg-gradient-to-tl from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text cursor-pointer"
               onClick={() => setShowAttachmentsPopup(true)}
             >
               {attachments.length} files selected
@@ -373,11 +373,11 @@ export default function EmailForm() {
               id="attachments"
               multiple
               onChange={handleFileChange}
-              className="w-full px-3 py-2 text-sm text-white bg-gray-500 rounded"
+              className="w-full px-3 py-2 text-sm text-white bg-black border border-gray-500 rounded-lg"
             />
             <br className="my-4" />
             <button
-              className="inline-flex h-10 mt-3 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 lg:ml-[200px] ml-[120px]"
+              className="inline-flex h-10 mt-3 animate-shimmer items-center justify-center rounded-md border border-blue-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 lg:ml-[200px] ml-[120px]"
               type="submit"
             >
               {sendButtonText}
