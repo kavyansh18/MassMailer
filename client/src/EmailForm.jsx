@@ -242,13 +242,13 @@ export default function EmailForm() {
               </div>
               <div className="flex flex-col justify-start">
                 <label
-                  className="block mb-2 text-m font-bold ml-3 block mb-2 text-m font-bold bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text"
+                  className="block mb-2 text-m font-bold lg:ml-3 block mb-2 text-m font-bold bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text"
                   htmlFor="excel"
                 >
                   Upload Excel File:
                 </label>
                 <p
-                  className="text-sm bg-gradient-to-tl from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text cursor-pointer ml-3"
+                  className="text-sm bg-gradient-to-tl from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text cursor-pointer lg:ml-3"
                   onClick={() => setShowRecipientsPopupFile(true)}
                 >
                   {recipients.length} emails added
