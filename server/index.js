@@ -4,8 +4,9 @@ const cors = require("cors");
 const multer = require("multer");
 const bodyParser = require("body-parser");
 require("dotenv").config();
+
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Use process.env.PORT if available, otherwise default to 3000
 
 // Configure multer for file uploads
 const upload = multer();
@@ -14,14 +15,7 @@ const upload = multer();
 app.use(cors());
 app.use(bodyParser.json());
 
-function sendEmail({
-  userId,
-  password,
-  recipients,
-  subject,
-  message,
-  attachments,
-}) {
+function sendEmail({ userId, password, recipients, subject, message, attachments }) {
   // Configure nodemailer
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -76,6 +70,12 @@ app.post("/", upload.array("attachments"), (req, res) => {
   }
 });
 
+// Default route handler for GET requests
+app.get("/", (req, res) => {
+  res.send("Welcome to my Node.js server");
+});
+
+// Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
