@@ -89,6 +89,7 @@ export default function EmailForm() {
       })
       .catch(() => {
         setSendButtonText("Send Email");
+        alert("Failed to send email");
         console.log("failure");
       });
   };
@@ -109,7 +110,7 @@ export default function EmailForm() {
               id="userId"
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
-              className="w-[270px]  px-3 py-1 text-sm bg-gray-500 rounded"
+              className="w-[290px]  px-3 py-1 text-sm bg-gray-500 rounded"
               placeholder="Enter your Gmail Id"
             />
           </div>
@@ -123,8 +124,8 @@ export default function EmailForm() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-[270px] px-3 py-1 text-sm bg-gray-500 rounded"
-                placeholder="Enter your password"
+                className="w-[290px] px-3 py-1 text-sm bg-gray-500 rounded"
+                placeholder="Enter your Gmail App Password"
               />
               <button
                 type="button"
@@ -163,6 +164,7 @@ export default function EmailForm() {
             recipients in just a few clicks, making it the perfect tool for
             businesses, marketers, and information spreaders.
           </p>
+          <a href="https://www.youtube.com/watch?v=27NianZC7Wk" className="text-white lg:text-right lg:direction-rtl text-[12px] text-center mt-1 hover:text-blue-400"><span className="text-red-500 text-lg">*</span>How to generate Gmail App Password?</a>
         </div>
 
         <div>
