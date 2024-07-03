@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import * as XLSX from "xlsx";
 import logo from "../src/assets/logo.png";
+import eyeOpenIcon from "../src/assets/eye-open.svg";
+import eyeClosedIcon from "../src/assets/eye-closed.svg";
 
 export default function EmailForm() {
   const [recipients, setRecipients] = useState([]);
@@ -21,8 +23,6 @@ export default function EmailForm() {
 
   const handleSubmitcred = (event) => {
     event.preventDefault();
-    // console.log("User ID:", userId);
-    // console.log("Password:", password);
     setLoginButtonText("Logged In");
   };
 
@@ -78,7 +78,7 @@ export default function EmailForm() {
     });
 
     axios
-      .post("http://localhost:3000/", formData, {
+      .post("https://massmailer-pdje.onrender.com", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -99,12 +99,9 @@ export default function EmailForm() {
       <div>
         <form
           onSubmit={handleSubmitcred}
-          className="w-[390px] lg:w-[1200px] mx-auto rounded shadow-md flex flex-col justify-center items-center lg:gap-3 sm:flex-row"
+          className="w-[390px] lg:w-[1200px] mx-auto rounded shadow-md flex flex-col justify-center items-center lg:gap-3 sm:flex-row mt-5 gap-3"
         >
           <div>
-            <label className="block text-m font-bold" htmlFor="userId">
-              User ID:
-            </label>
             <input
               type="text"
               id="userId"
@@ -115,9 +112,6 @@ export default function EmailForm() {
             />
           </div>
           <div>
-            <label className="block text-m font-bold" htmlFor="password">
-              Password:
-            </label>
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
@@ -132,11 +126,15 @@ export default function EmailForm() {
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute inset-y-0 right-0 px-4 py-1 text-[13px] bg-gray-300 rounded"
               >
-                {showPassword ? "Hide" : "Show"}
+                {showPassword ? (
+                  <img src={eyeClosedIcon} alt="Hide" className="h-4 w-4" />
+                ) : (
+                  <img src={eyeOpenIcon} alt="Show" className="h-4 w-4" />
+                )}
               </button>
             </div>
           </div>
-          <div className="mt-6">
+          <div>
             <button
               type="submit"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-5 rounded text-[14px]"
@@ -164,7 +162,14 @@ export default function EmailForm() {
             recipients in just a few clicks, making it the perfect tool for
             businesses, marketers, and information spreaders.
           </p>
-          <a href="https://www.youtube.com/watch?v=27NianZC7Wk" target="_blank" className="text-white lg:text-right lg:direction-rtl text-[12px] text-center mt-1 hover:text-blue-400"><span className="text-red-500 text-lg">*</span>How to generate Gmail App Password?</a>
+          <a
+            href="https://www.youtube.com/watch?v=27NianZC7Wk"
+            target="_blank"
+            className="text-white lg:text-right lg:direction-rtl text-[12px] text-center mt-1 hover:text-blue-400"
+          >
+            <span className="text-red-500 text-lg">*</span>How to generate
+            Gmail App Password?
+          </a>
         </div>
 
         <div>
@@ -172,7 +177,7 @@ export default function EmailForm() {
             onSubmit={handleSubmit}
             className="lg:w-[550px] w-[390px] h-[550px] mx-auto p-4 pt-6 pb-8 mb-4 rounded shadow-md"
           >
-            <div className="flex justify-center gap-4 ">
+            <div className="lg:flex lg:justify-center gap-4 ">
               <div>
                 <label className="block mb-2 text-m font-bold text-white">
                   Recipients:
@@ -228,7 +233,7 @@ export default function EmailForm() {
                   onClick={handleAddRecipient}
                   className="bg-gray-500 hover:bg-black text-white py-1 px-2 rounded text-[14px] my-2"
                 >
-                  Add More
+                  Add
                 </button>
               </div>
               <div className="flex flex-col justify-start">
