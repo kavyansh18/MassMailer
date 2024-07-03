@@ -29,7 +29,7 @@ function sendEmail({ recipients, subject, message, attachments }) {
       from: process.env.GMAIL_USERNAME,
       to: recipients,
       subject: subject,
-      html: `<p>${message}</p>`,
+      html: `<p>${message.replace(/\n/g, '<br>')}</p>`,
       attachments: attachments.map((attachment) => ({
         filename: attachment.originalname,
         content: attachment.buffer,
