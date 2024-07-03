@@ -164,7 +164,7 @@ export default function EmailForm() {
             recipients in just a few clicks, making it the perfect tool for
             businesses, marketers, and information spreaders.
           </p>
-          <a href="https://www.youtube.com/watch?v=27NianZC7Wk" className="text-white lg:text-right lg:direction-rtl text-[12px] text-center mt-1 hover:text-blue-400"><span className="text-red-500 text-lg">*</span>How to generate Gmail App Password?</a>
+          <a href="https://www.youtube.com/watch?v=27NianZC7Wk" target="_blank" className="text-white lg:text-right lg:direction-rtl text-[12px] text-center mt-1 hover:text-blue-400"><span className="text-red-500 text-lg">*</span>How to generate Gmail App Password?</a>
         </div>
 
         <div>
