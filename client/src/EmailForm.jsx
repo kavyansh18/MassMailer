@@ -9,6 +9,7 @@ export default function EmailForm() {
   const [attachments, setAttachments] = useState([]);
   const [showRecipientsPopup, setShowRecipientsPopup] = useState(false);
   const [showAttachmentsPopup, setShowAttachmentsPopup] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('Send Email'); // New state for button text
 
   const handleAddRecipient = () => {
     if (newRecipient) {
@@ -31,6 +32,7 @@ export default function EmailForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSubmitStatus('Sending...'); // Update button text to "Sending..."
     const formData = new FormData();
     formData.append('recipients', JSON.stringify(recipients));
     formData.append('subject', subject);
@@ -45,9 +47,13 @@ export default function EmailForm() {
       },
     })
     .then(() => {
+      setSubmitStatus('Sent'); // Update button text to "Sent"
+      alert('Sent successfully!');
       console.log('success');
+      setTimeout(() => setSubmitStatus('Send Email'), 2000); // Reset button text after 2 seconds
     })
     .catch((error) => {
+      setSubmitStatus('Send Email'); // Reset button text on failure
       console.log('failure', error);
     });
   };
@@ -172,8 +178,9 @@ export default function EmailForm() {
           <button
             type="submit"
             className="mt-4 text-[16px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-[200px]"
+            disabled={submitStatus === 'Sending...'} // Disable button when sending
           >
-            Send Email
+            {submitStatus} {/* Display the submit status */}
           </button>
         </form>
       </div>

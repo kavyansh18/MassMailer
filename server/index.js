@@ -27,7 +27,7 @@ function sendEmail({ recipients, subject, message, attachments }) {
   return new Promise((resolve, reject) => {
     const mailConfigs = {
       from: process.env.GMAIL_USERNAME,
-      to: recipients.join(', '),
+      to: recipients,
       subject: subject,
       html: `<p>${message}</p>`,
       attachments: attachments.map((attachment) => ({
