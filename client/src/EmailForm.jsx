@@ -98,7 +98,7 @@ export default function EmailForm() {
       <div>
         <form
           onSubmit={handleSubmitcred}
-          className="w-[1200px] mx-auto rounded shadow-md flex justify-center items-center gap-3"
+          className="w-[390px] lg:w-[1200px] mx-auto rounded shadow-md flex flex-col justify-center items-center lg:gap-3 sm:flex-row"
         >
           <div>
             <label className="block text-m font-bold" htmlFor="userId">
@@ -109,7 +109,7 @@ export default function EmailForm() {
               id="userId"
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
-              className="w-[270px] px-3 py-1 text-sm bg-gray-500 rounded"
+              className="w-[270px]  px-3 py-1 text-sm bg-gray-500 rounded"
               placeholder="Enter your Gmail Id"
             />
           </div>
@@ -146,18 +146,18 @@ export default function EmailForm() {
         </form>
       </div>
 
-      <div className="flex justify-center align-items gap-12">
-        <div className="w-[360px] mt-3 flex flex-col justify-center align-items mb-[140px]">
-          <div className="flex justify-center align-items ml-14">
+      <div className="flex justify-center align-items lg:gap-12 gap-1 flex-col sm:flex-row">
+        <div className="w-[390px] mt-3 flex flex-col justify-center align-items lg:mb-[140px] sm:my-12">
+          <div className="flex justify-center align-items lg:ml-14">
             <img className="w-[160px]" src={logo} alt="" />
           </div>
-          <h1 className="text-white mb-1 text-right direction-rtl text-[30px]">
+          <h1 className="text-white mb-1 lg:text-right lg:direction-rtl text-[30px] text-center">
             Welcome to MassMailer
           </h1>
-          <h1 className="text-white mb-1 text-right direction-rtl   text-blue-400">
+          <h1 className="text-white mb-1 lg:text-right lg:direction-rtl text-blue-400 text-center">
             Reach Your Audience with One Click
           </h1>
-          <p className="text-white text-right direction-rtl text-[12px]">
+          <p className="text-white lg:text-right lg:direction-rtl text-[12px] text-center">
             The ultimate solution for all your email marketing needs. Our
             massmailer allows you to send personalized emails to thousands of
             recipients in just a few clicks, making it the perfect tool for
@@ -168,7 +168,7 @@ export default function EmailForm() {
         <div>
           <form
             onSubmit={handleSubmit}
-            className="w-[550px] h-[550px] mx-auto p-4 pt-6 pb-8 mb-4 rounded shadow-md"
+            className="lg:w-[550px] w-[390px] h-[550px] mx-auto p-4 pt-6 pb-8 mb-4 rounded shadow-md"
           >
             <div className="flex justify-center gap-4 ">
               <div>
@@ -367,7 +367,7 @@ export default function EmailForm() {
             <br className="my-4" />
             <button
               type="submit"
-              className="mt-4 text-[16px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-[200px]"
+              className="mt-4 text-[16px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded lg:ml-[200px] ml-[120px]"
             >
               {sendButtonText}
             </button>
