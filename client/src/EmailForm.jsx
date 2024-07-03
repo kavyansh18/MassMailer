@@ -160,7 +160,7 @@ export default function EmailForm() {
           <h1 className="text-blue-400 mb-1 lg:text-right lg:direction-rtl text-blue-400 text-center bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
             Reach Your Audience with One Click
           </h1>
-          <p className="text-white lg:text-right lg:direction-rtl text-[12px] text-center bg-gradient-to-r from-slate-300 to-slate-500 text-transparent bg-clip-text">
+          <p className="lg:text-right lg:direction-rtl text-[12px] text-center bg-gradient-to-r from-slate-300 to-slate-500 text-transparent bg-clip-text">
             The ultimate solution for all your email marketing needs. Our
             massmailer allows you to send personalized emails to thousands of
             recipients in just a few clicks, making it the perfect tool for
