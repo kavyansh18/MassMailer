@@ -59,6 +59,7 @@ export function Homepg() {
         <a
           className="lg:w-24 lg:mt-12 w-20 mt-10"
           href="https://buymeacoffee.com/kavyansh"
+          target="_blank"
         >
           <img src={bmc} alt="" />
         </a>
