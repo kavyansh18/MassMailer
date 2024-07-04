@@ -1,19 +1,27 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ReactDOM from "react-dom/client";
 import "./index.css";
-import EmailForm from "./EmailForm.jsx";
-import { Homepg } from "./Homepg.jsx";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import EmailForm from './EmailForm.jsx'
+import { Homepg } from './Homepg.jsx'
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route path="" element={<Homepg />} /> 
+      <Route path="/form" element={<EmailForm />} /> 
+    </Route>
+  )
+);
 
-root.render(
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Homepg} />
-        <Route path="/form" component={EmailForm} />
-      </Switch>
-    </Router>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

@@ -27,15 +27,6 @@ export function Homepg() {
             businesses, marketers, and information spreaders.
           </p>
 
-          <a
-            href="https://www.youtube.com/watch?v=27NianZC7Wk"
-            target="_blank"
-            className=" lg:text-right lg:direction-rtl text-[12px] text-center mt-1 hover:text-blue-400 bg-gradient-to-r from-blue-200 to-cyan-200 text-transparent bg-clip-text mb-3"
-          >
-            <span className="text-red-500 text-lg ">*</span>How to generate
-            Gmail App Password?
-          </a>
-
           <NavLink
             to="/form"
             className="relative inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mt-2"
