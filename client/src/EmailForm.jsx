@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import * as XLSX from "xlsx";
 import logo from "../src/assets/logo.png";
 import eyeOpenIcon from "../src/assets/eye-open.svg";
 import eyeClosedIcon from "../src/assets/eye-closed.svg";
 import "./font.css";
+import HashLoader from "react-spinners/HashLoader";
 
 export default function EmailForm() {
   const [recipients, setRecipients] = useState([]);
@@ -21,6 +22,15 @@ export default function EmailForm() {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  const [loading,setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 1800);
+  },[])
 
   const handleSubmitcred = (event) => {
     event.preventDefault();
@@ -65,9 +75,19 @@ export default function EmailForm() {
     }
   };
 
+  const resetForm = () => {
+    setRecipients([]);
+    setNewRecipient("");
+    setSubject("");
+    setBody("");
+    setAttachments([]);
+    setSendButtonText("Send Email");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSendButtonText("Sending...");
+    setLoading(true)
     const formData = new FormData();
     formData.append("userId", userId);
     formData.append("password", password);
@@ -85,18 +105,35 @@ export default function EmailForm() {
         },
       })
       .then(() => {
+        setLoading(false)
         setSendButtonText("Sent");
-        alert("Sent successfully!");
+        setTimeout(() => {
+          alert("Sent successfully!");
+          resetForm()
+        }, 100);
       })
       .catch(() => {
+        setLoading(false)
         setSendButtonText("Send Email");
-        alert("Failed to send email");
-        console.log("failure");
+        setTimeout(() => {
+          alert("Failed to send email!");
+          resetForm()
+        }, 100);
+        //console.log("failure");
       });
   };
 
   return (
-    <div>
+    <div className="flex justify-center items-center w-full h-screen mt-5">
+      {
+        loading?
+        <HashLoader
+        color={'#0E46A3'}
+        loading={loading}
+        size={50}
+        />
+        :
+        <div>
       <div>
         <form
           onSubmit={handleSubmitcred}
@@ -385,6 +422,8 @@ export default function EmailForm() {
           </form>
         </div>
       </div>
+    </div>
+      }
     </div>
   );
 }
