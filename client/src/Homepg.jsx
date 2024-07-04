@@ -12,11 +12,11 @@ export function Homepg() {
       <div className=" w-full relative lg:mx-[250px]">
         <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
         <div className="relative shadow-xl bg-gray-900 border border-gray-800  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start lg:mx-[180px] mx-[50px]">
-          <h1 className="font-bold lg:text-[30px] text-[23px] bg-gradient-to-r from-slate-300 to-slate-500 text-transparent bg-clip-text mb-4 relative z-50 ">
+          <h1 className="font-bold lg:text-[40px] text-[23px] bg-gradient-to-r from-slate-300 to-slate-500 text-transparent bg-clip-text mb-2 relative z-50 ">
             Welcome to MassMailer
           </h1>
 
-          <h5 className="font-bold text-m text-blue-400 text-center bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text mb-4 relative z-50">
+          <h5 className="font-bold lg:text-[24px] text-[14px] text-blue-400 text-center bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text mb-2 relative z-50">
             Reach Your Audience with One Click
           </h5>
 
@@ -38,12 +38,12 @@ export function Homepg() {
 
           <NavLink
             to="/form"
-            className="relative inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            className="relative inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mt-2"
             activeClassName="active-link-class" // Add this if you want to apply active styles
             type="button"
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-5 text-sm font-medium text-white backdrop-blur-3xl">
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-8 text-m font-medium text-white backdrop-blur-3xl">
               Start
             </span>
           </NavLink>
