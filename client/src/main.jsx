@@ -12,7 +12,7 @@ import { Homepg } from './Homepg.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route exact path="" component={Homepg}>
+    <Route exact path="/" component={Homepg}>
       <Route path="" element={<Homepg />} /> 
       <Route path="/form" element={<EmailForm />} /> 
     </Route>
