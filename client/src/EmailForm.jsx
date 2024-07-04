@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import * as XLSX from "xlsx";
-import logo from "../src/assets/logo.png";
 import eyeOpenIcon from "../src/assets/eye-open.svg";
 import eyeClosedIcon from "../src/assets/eye-closed.svg";
 import "./font.css";
@@ -188,32 +187,6 @@ export default function EmailForm() {
       </div>
 
       <div className="flex justify-center align-items lg:gap-12 gap-1 flex-col sm:flex-row">
-        <div className="w-[390px] mt-3 flex flex-col justify-center align-items lg:mb-[140px] sm:my-12">
-          <div className="flex justify-center align-items lg:ml-14">
-            <img className="w-[160px]" src={logo} alt="" />
-          </div>
-          <h1 className=" mb-1 lg:text-right lg:direction-rtl text-[36px] text-center bg-gradient-to-r from-slate-300 to-slate-500 text-transparent bg-clip-text">
-            Welcome to MassMailer
-          </h1>
-          <h1 className="text-blue-400 mb-1 lg:text-right lg:direction-rtl text-blue-400 text-center bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
-            Reach Your Audience with One Click
-          </h1>
-          <p className="lg:text-right lg:direction-rtl text-[12px] text-center bg-gradient-to-r from-slate-300 to-slate-500 text-transparent bg-clip-text">
-            The ultimate solution for all your email marketing needs. Our
-            massmailer allows you to send personalized emails to thousands of
-            recipients in just a few clicks, making it the perfect tool for
-            businesses, marketers, and information spreaders.
-          </p>
-          <a
-            href="https://www.youtube.com/watch?v=27NianZC7Wk"
-            target="_blank"
-            className=" lg:text-right lg:direction-rtl text-[12px] text-center mt-1 hover:text-blue-400 bg-gradient-to-r from-blue-200 to-cyan-200 text-transparent bg-clip-text"
-          >
-            <span className="text-red-500 text-lg ">*</span>How to generate
-            Gmail App Password?
-          </a>
-        </div>
-
         <div>
           <form
             onSubmit={handleSubmit}
