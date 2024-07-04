@@ -193,7 +193,7 @@ export default function EmailForm() {
                   {recipients.length} emails added
                 </p>
                 {showRecipientsPopup && (
-                  <div className="absolute bg-black px-3 rounded shadow-md lg:w-[430px] w-[360px] h-[200px] overflow-y-auto">
+                  <div className="absolute bg-black px-3 rounded shadow-md lg:w-[380px] w-[360px] h-[200px] overflow-y-auto">
                     <div className="flex flex-row justify-between sticky top-0 bg-black pt-2">
                       <h2 className="text-[16px] font-bold mb-2 text-white">
                         Added Recipients
@@ -254,7 +254,7 @@ export default function EmailForm() {
                   {recipients.length} emails added
                 </p>
                 {showRecipientsPopupFile && (
-                  <div className="absolute bg-black px-3 rounded shadow-md lg:w-[430px] w-[360px] h-[200px] overflow-y-auto">
+                  <div className="absolute bg-black px-3 rounded shadow-md lg:w-[380px] w-[360px] h-[200px] overflow-y-auto">
                     <div className="flex flex-row justify-between sticky top-0 bg-black pt-2">
                       <h2 className="text-[16px] font-bold mb-2 text-white">
                         Added Recipients
@@ -336,7 +336,7 @@ export default function EmailForm() {
               {attachments.length} files selected
             </p>
             {showAttachmentsPopup && (
-              <div className="absolute bg-black px-3 rounded shadow-md lg:w-[430px] w-[360px] h-[95px] overflow-y-auto">
+              <div className="absolute bg-black px-3 rounded shadow-md lg:w-[520px] w-[360px] h-[95px] overflow-y-auto">
                 <div className="flex flex-row justify-between sticky top-0 bg-black pt-2">
                   <h2 className="text-[16px] font-bold mb-2 text-white">
                     Added Attachments
