@@ -12,20 +12,29 @@ export function Homepg() {
       <div className=" w-full relative lg:mx-[250px]">
         <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
         <div className="relative shadow-xl bg-gray-900 border border-gray-800  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start lg:mx-[180px] mx-[50px]">
-          <h1 className="font-bold text-xl text-white mb-4 relative z-50">
+          <h1 className="font-bold lg:text-[30px] text-[23px] bg-gradient-to-r from-slate-300 to-slate-500 text-transparent bg-clip-text mb-4 relative z-50 ">
             Welcome to MassMailer
           </h1>
 
-          <h5 className="font-bold text-m text-white mb-4 relative z-50">
+          <h5 className="font-bold text-m text-blue-400 text-center bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text mb-4 relative z-50">
             Reach Your Audience with One Click
           </h5>
 
-          <p className="font-normal text-base text-slate-500 mb-4 relative z-50">
+          <p className="font-normal text-base text-slate-500 relative z-50">
             The ultimate solution for all your email marketing needs. Our
             massmailer allows you to send personalized emails to thousands of
             recipients in just a few clicks, making it the perfect tool for
             businesses, marketers, and information spreaders.
           </p>
+
+          <a
+            href="https://www.youtube.com/watch?v=27NianZC7Wk"
+            target="_blank"
+            className=" lg:text-right lg:direction-rtl text-[12px] text-center mt-1 hover:text-blue-400 bg-gradient-to-r from-blue-200 to-cyan-200 text-transparent bg-clip-text mb-3"
+          >
+            <span className="text-red-500 text-lg ">*</span>How to generate
+            Gmail App Password?
+          </a>
 
           <NavLink
             to="/form"
