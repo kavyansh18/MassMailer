@@ -131,7 +131,7 @@ export default function EmailForm() {
         color={'#0E46A3'}
         loading={loading}
         size={50}
-        className="mb-[180px]"
+        className="mb-[180px] lg:mb-[80px]"
         />
         :
         <div>
