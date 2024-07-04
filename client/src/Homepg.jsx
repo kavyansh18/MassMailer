@@ -51,6 +51,7 @@ export function Homepg() {
         <a
           className="lg:w-12 lg:mt-12 w-12 mt-10"
           href="https://instagram.com/kavyansh.in"
+          target="_blank"
         >
           <img src={ig} alt="" />
         </a>
@@ -65,6 +66,7 @@ export function Homepg() {
         <a
           className="lg:w-7 lg:mt-12 w-7 mt-10"
           href="https://github.com/kavyansh18"
+          target="_blank"
         >
           <img src={github} alt="" />
         </a>
@@ -72,6 +74,7 @@ export function Homepg() {
         <a
           className="lg:w-7 lg:mt-12 w-7 mt-10"
           href="https://x.com/the_kavyansh"
+          target="_blank"
         >
           <img src={twitter} alt="" />
         </a>
