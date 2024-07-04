@@ -9,9 +9,9 @@ export function Homepg() {
       <div className="rounded-full border flex items-center justify-center mb-5 border-gray-500">
         <img className="w-[120px]" src={logo} alt="" />
       </div>
-      <div className=" w-full relative mx-[250px]">
+      <div className=" w-full relative lg:mx-[250px]">
         <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
-        <div className="relative shadow-xl bg-gray-900 border border-gray-800  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start mx-[180px]">
+        <div className="relative shadow-xl bg-gray-900 border border-gray-800  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start lg:mx-[180px] mx-[50px]">
           <h1 className="font-bold text-xl text-white mb-4 relative z-50">
             Welcome to MassMailer
           </h1>

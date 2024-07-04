@@ -123,7 +123,7 @@ export default function EmailForm() {
   };
 
   return (
-    <div className="flex justify-center items-center w-full h-screen mt-5">
+    <div className="flex justify-center items-center w-full h-screen lg:mt-5">
       {
         loading?
         <HashLoader
@@ -137,7 +137,7 @@ export default function EmailForm() {
       <div>
         <form
           onSubmit={handleSubmitcred}
-          className="w-[390px] lg:w-[1200px] mx-auto rounded shadow-md flex flex-col justify-center items-center lg:gap-3 sm:flex-row mt-[300px] lg:mt-5 gap-3"
+          className="w-[390px] lg:w-[1200px] mx-auto rounded shadow-md flex flex-col justify-center items-center lg:gap-3 sm:flex-row lg:mt-5 gap-3"
         >
           <div>
             <input
