@@ -5,6 +5,7 @@ import eyeOpenIcon from "../src/assets/eye-open.svg";
 import eyeClosedIcon from "../src/assets/eye-closed.svg";
 import "./font.css";
 import HashLoader from "react-spinners/HashLoader";
+import { Button } from "./UI/MovingBorder.jsx";
 
 export default function EmailForm() {
   const [recipients, setRecipients] = useState([]);
@@ -144,7 +145,7 @@ export default function EmailForm() {
                   id="userId"
                   value={userId}
                   onChange={(e) => setUserId(e.target.value)}
-                  className="w-[290px] text-white px-3 py-1 text-sm bg-black border border-blue-400 rounded-lg "
+                  className="w-[290px] text-white px-3 py-1 text-sm bg-black border border-blue-400 rounded-lg shadow-sm bg-transparent"
                   placeholder="Enter your Gmail Id"
                 />
               </div>
@@ -156,7 +157,7 @@ export default function EmailForm() {
                       id="password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="w-[290px] text-white px-3 py-[5px] text-sm bg-black border border-blue-400 rounded-lg"
+                      className="w-[290px] text-white px-3 py-[5px] text-sm bg-black border border-blue-400 rounded-lg shadow-sm bg-transparent"
                       placeholder="Enter your Gmail App Password"
                     />
                     <button
@@ -205,7 +206,7 @@ export default function EmailForm() {
             <div>
               <form
                 onSubmit={handleSubmit}
-                className="lg:w-[550px] w-[390px] h-[550px] mx-auto p-4 pt-3 pb-8 mb-4 rounded shadow-md"
+                className="lg:w-[650px] w-[390px] h-[550px] mx-auto p-4 pt-3 pb-8 mb-4 rounded shadow-md"
               >
                 <div className="lg:flex lg:justify-center gap-8 ">
                   <div>
@@ -256,19 +257,19 @@ export default function EmailForm() {
                       value={newRecipient}
                       onChange={(e) => setNewRecipient(e.target.value)}
                       placeholder="Enter email address"
-                      className="w-full px-3 py-2 text-sm text-white bg-black border border-gray-500 rounded-lg"
+                      className="w-full px-3 py-2 text-sm text-white bg-black border border-gray-500 rounded-lg shadow-sm bg-transparent"
                     />
                     <button
                       className="inline-flex h-7 mt-1 mb-2 animate-shimmer items-center justify-center rounded-md border border-blue-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-4 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 "
                       type="button"
                       onClick={handleAddRecipient}
                     >
-                      Add
+                      Add Reciptent
                     </button>
                   </div>
                   <div className="flex flex-col justify-start">
                     <label
-                      className="block mb-2 text-m font-bold lg:ml-3 block mb-2 text-m font-bold bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text"
+                      className="block mb-2 text-m font-bold lg:ml-3 block mb-2 text-m font-bold bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text lg:mt-1 mt-3"
                       htmlFor="excel"
                     >
                       Upload Excel File:
@@ -317,7 +318,7 @@ export default function EmailForm() {
                       id="excel"
                       accept=".xlsx, .xls"
                       onChange={handleExcelChange}
-                      className="w-full px-3 py-2 text-sm text-white bg-black rounded-lg h-[37px]"
+                      className="w-full shadow-sm bg-transparent px-3 py-2 text-sm text-white bg-black rounded-lg h-[37px]"
                     />
                     <br className="my-4" />
                   </div>
@@ -333,7 +334,7 @@ export default function EmailForm() {
                   id="subject"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
-                  className="w-full px-3 py-2 text-sm text-white bg-black border border-gray-500 rounded-lg"
+                  className="w-full px-3 py-2 text-sm text-white bg-black border border-gray-500 rounded-lg shadow-sm bg-transparent"
                 />
                 <br className="my-4" />
                 <label
@@ -346,7 +347,7 @@ export default function EmailForm() {
                   id="body"
                   value={body}
                   onChange={(e) => setBody(e.target.value)}
-                  className="w-full px-3 py-2 text-sm text-white bg-black border border-gray-500 rounded-lg h-24 resize-y overflow-y-auto"
+                  className="w-full px-3 py-2 text-sm text-white bg-black border border-gray-500 rounded-lg h-24 resize-y overflow-y-auto shadow-sm bg-transparent"
                 />
                 <br className="my-4" />
                 <label
@@ -399,15 +400,18 @@ export default function EmailForm() {
                   id="attachments"
                   multiple
                   onChange={handleFileChange}
-                  className="w-full px-3 py-2 text-sm text-white bg-black border border-gray-500 rounded-lg"
+                  className="w-full px-3 py-2 text-sm text-white bg-black border border-gray-500 rounded-lg shadow-sm bg-transparent"
                 />
                 <br className="my-4" />
-                <button
-                  className="inline-flex h-10 mt-3 animate-shimmer items-center justify-center rounded-md border border-blue-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 lg:ml-[200px] ml-[110px] mb-8"
-                  type="submit"
-                >
-                  {sendButtonText}
-                </button>
+                <div className="flex justify-center items-center mt-3">
+                  <Button
+                    borderRadius="1.75rem"
+                    className="bg-slate-900 text-white border-slate-800 text-[18px] "
+                    type="submit"
+                  >
+                    {sendButtonText}
+                  </Button>
+                </div>
               </form>
             </div>
           </div>

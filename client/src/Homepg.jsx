@@ -26,7 +26,7 @@ export function Homepg() {
 
           <p className="font-normal text-base text-slate-500 relative z-50">
             The ultimate solution for all your email marketing needs. Our
-            massmailer allows you to send personalized emails to thousands of
+            massmailer allows you to send personalized emails to multiple
             recipients in just a few clicks, making it the perfect tool for
             businesses, marketers, and information spreaders.
           </p>
