@@ -137,8 +137,11 @@ export default function EmailForm() {
           <div>
             <form
               onSubmit={handleSubmitcred}
-              className="w-[390px] lg:w-[1200px] mx-auto rounded shadow-md flex flex-col justify-center items-center lg:gap-3 sm:flex-row lg:mt-5 gap-3"
+              className="w-[390px] lg:w-[1200px] mx-auto rounded shadow-md flex flex-col justify-center items-center lg:gap-3 sm:flex-row lg:mt-5 gap-3 lg:mr-[63px] "
             >
+              <div className="font-bold bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text">
+                Sender Details:
+              </div>
               <div>
                 <input
                   type="text"
